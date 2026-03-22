@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Direct Access Portal</title>
+    <meta name="description" content="Unlisted direct access portal." />
+    <link rel="stylesheet" href="../assets/css/base.css" />
+  </head>
+
+  <body>
+    <main class="container">
+      <h1>Direct Access</h1>
+      <p>Unlisted entry point. Immediate connection.</p>
+
+      <div class="consent-box">
+        <label>
+          <input type="checkbox" id="consentCheck" />
+          I confirm I am 18+ and agree to the
+          <a href="/policies/terms.html" target="_blank" rel="noopener">Terms</a> and
+          <a href="/policies/privacy.html" target="_blank" rel="noopener">Privacy Policy</a>
+        </label>
+      </div>
+
+      <a id="enterBtn" class="cta discreet disabled">
+        Continue
+      </a>
+
+      <p class="micro">This page is not publicly listed.</p>
+
+      <footer class="legal">
+        <a href="/policies/privacy.html">Privacy Policy</a>
+        <a href="/policies/terms.html">Terms & Conditions</a>
+        <a href="/policies/cookies.html">Cookie Policy</a>
+        <br />
+        <span>© 2026 PrivateHub · privacy@privatehub.io</span>
+      </footer>
+    </main>
+
+    <script>
+      const check = document.getElementById("consentCheck");
+      const btn = document.getElementById("enterBtn");
+
+      check.addEventListener("change", function () {
+        if (check.checked) {
+          btn.classList.remove("disabled");
+          btn.href = "https://track.privatehub.io/click?campaign=c&source=direct";
+        } else {
+          btn.classList.add("disabled");
+          btn.removeAttribute("href");
+        }
+      });
+    </script>
+  </body>
+</html>

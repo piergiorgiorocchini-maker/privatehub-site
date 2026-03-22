@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Private Access</title>
+    <meta name="description" content="Private access portal." />
+    <link rel="stylesheet" href="../assets/css/base.css?v=2" />
+  </head>
+
+  <body>
+    <main class="container">
+      <h1>Restricted Live Access</h1>
+      <p>Live sessions currently active.</p>
+
+      <div class="consent-box">
+        <label>
+          <input type="checkbox" id="consentCheck" />
+          I confirm I am 18+ and agree to the
+          <a href="/policies/terms.html" target="_blank">Terms</a> and
+          <a href="/policies/privacy.html" target="_blank">Privacy Policy</a>
+        </label>
+      </div>
+
+      <a id="enterBtn" class="cta disabled">
+  Enter Live Room
+</a>
+
+      <p class="micro">
+        Limited availability. Access may close at any time.
+      </p>
+
+      <footer class="legal">
+        <a href="/policies/privacy.html">Privacy Policy</a>
+        <a href="/policies/terms.html">Terms & Conditions</a>
+        <a href="/policies/cookies.html">Cookie Policy</a>
+        <br />
+        <span>© 2026 PrivateHub · privacy@privatehub.io</span>
+      </footer>
+    </main>
+
+    <script>
+  const check = document.getElementById("consentCheck");
+  const btn = document.getElementById("enterBtn");
+
+  check.addEventListener("change", function () {
+    if (check.checked) {
+      btn.classList.remove("disabled");
+      btn.href =
+        "https://track.privatehub.io/click?campaign=a&source=direct";
+    } else {
+      btn.classList.add("disabled");
+      btn.removeAttribute("href");
+    }
+  });
+</script>
+  </body>
+</html>

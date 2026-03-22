@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Acceso Privado</title>
+    <meta name="description" content="Portal de acceso privado." />
+    <link rel="stylesheet" href="../../assets/css/base.css?v=2">
+  </head>
+
+  <body>
+    <main class="container">
+      <h1>Acceso en vivo restringido</h1>
+      <p>Sesiones en vivo actualmente activas.</p>
+
+      <div class="consent-box">
+        <label>
+          <input type="checkbox" id="consentCheck" />
+          Confirmo que tengo al menos 18 años y acepto los
+          <a href="/policies/terms.html" target="_blank">Términos y Condiciones</a> y la
+          <a href="/policies/privacy.html" target="_blank">Política de Privacidad</a>
+        </label>
+      </div>
+
+      <a id="enterBtn" class="cta disabled">
+        Entrar ahora
+      </a>
+
+      <p class="micro">
+        Disponibilidad limitada. El acceso puede cerrarse en cualquier momento.
+      </p>
+
+      <footer class="legal">
+        <a href="/policies/privacy.html">Política de Privacidad</a>
+        <a href="/policies/terms.html">Términos y Condiciones</a>
+        <a href="/policies/cookies.html">Política de Cookies</a>
+        <br />
+        <span>© 2026 PrivateHub · privacy@privatehub.io</span>
+      </footer>
+    </main>
+
+    <script>
+      const check = document.getElementById("consentCheck");
+      const btn = document.getElementById("enterBtn");
+
+      check.addEventListener("change", function () {
+        if (check.checked) {
+          btn.classList.remove("disabled");
+          btn.href =
+            "https://track.privatehub.io/click?campaign=es-a&source=direct";
+        } else {
+          btn.classList.add("disabled");
+          btn.removeAttribute("href");
+        }
+      });
+    </script>
+  </body>
+</html>
